@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GeoVector AI Viewer</title>
+    <script>
+      window.global = window;
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Fix for Leaflet controls z-index in some Tailwind setups */
+      .leaflet-pane { z-index: 0; }
+      .leaflet-control { z-index: 50; }
+      .leaflet-top, .leaflet-bottom { z-index: 1000; }
+      body { 
+        font-family: 'Inter', sans-serif; 
+        font-size: 16px; /* Base size increase */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      /* Custom scrollbar slightly wider for accessibility */
+      .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: #000; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #444; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "jszip": "https://aistudiocdn.com/jszip@^3.10.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "leaflet": "https://aistudiocdn.com/leaflet@^1.9.4",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-leaflet": "https://aistudiocdn.com/react-leaflet@^5.0.0",
+    "geojson": "https://aistudiocdn.com/geojson@^0.5.0",
+    "@tmcw/togeojson": "https://aistudiocdn.com/@tmcw/togeojson@^7.1.2",
+    "shpjs": "https://esm.sh/shpjs@4.0.4",
+    "shp-write": "https://esm.sh/shp-write@0.3.2",
+    "papaparse": "https://esm.sh/papaparse@5.4.1",
+    "topojson-client": "https://esm.sh/topojson-client@3.1.0",
+    "dxf-parser": "https://esm.sh/dxf-parser@1.1.2",
+    "proj4": "https://esm.sh/proj4@2.10.0",
+    "@turf/turf": "https://esm.sh/@turf/turf@6.5.0",
+    "jspdf": "https://esm.sh/jspdf@2.5.1",
+    "jspdf-autotable": "https://esm.sh/jspdf-autotable@3.8.2",
+    "tokml": "https://esm.sh/tokml@0.4.0",
+    "xlsx": "https://esm.sh/xlsx@0.18.5",
+    "chart.js": "https://esm.sh/chart.js@4.4.2",
+    "react-chartjs-2": "https://esm.sh/react-chartjs-2@5.2.0?external=react,react-dom,chart.js"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-900 text-slate-100 h-screen w-screen overflow-hidden">
+    <div id="root" class="h-full w-full"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

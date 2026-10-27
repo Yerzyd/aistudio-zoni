@@ -1,0 +1,8 @@
+{
+  "name": "Plano de Zonificación",
+  "description": "Una herramienta profesional para visualizar capas vectoriales KML y KMZ en mapas interactivos, raster y realiza un analisis de sobreposicionamiento de las capas para determinar zonas homogeneas segun la union de capas de mas a menos",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}
